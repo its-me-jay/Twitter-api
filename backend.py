@@ -49,15 +49,17 @@ def twitter_search(keyword):
             tweet_language=language(data['statuses'][i]['retweeted_status']['metadata']['iso_language_code'])
 
             timestamp = mktime_tz(parsedate_tz(data['statuses'][i]['retweeted_status']['created_at']))
-            tweet_time = datetime.fromtimestamp(timestamp, pytz.timezone('Asia/Kolkata'))
-            tweet_time=tweet_time.strftime('%Y-%m-%d %H:%M:%S')
+            tweet_time = datetime.fromtimestamp(timestamp, pytz.timezone('Asia/Kolkata')).isoformat()
+            tweet_time=str(tweet_time[0:-6]+"Z")
+            tweet_time = datetime.strptime(tweet_time, "%Y-%m-%dT%H:%M:%SZ")
+            #tweet_time=tweet_time.strftime('%Y-%m-%d %H:%M:%S')
             tweet_id=data['statuses'][i]['retweeted_status']['id']
             tweet_link="https://twitter.com/statuses/"+str(tweet_id)
 
             user_followersCount=data['statuses'][i]['retweeted_status']['user']['followers_count']
             user_favouritesCount=data['statuses'][i]['retweeted_status']['user']['favourites_count']
             user_friends=data['statuses'][i]['retweeted_status']['user']['friends_count']
-            user_name=(data['statuses'][i]['retweeted_status']['user']['name'])..encode('utf-8')
+            user_name=(data['statuses'][i]['retweeted_status']['user']['name']).encode('utf-8')
             user_screenname=(data['statuses'][i]['retweeted_status']['user']['screen_name']).encode('utf-8')
             user_profileLink="https://twitter.com/"+str(user_screenname)
             user_language=language(data['statuses'][i]['retweeted_status']['user']['lang'])
@@ -75,8 +77,10 @@ def twitter_search(keyword):
             tweet_language=language(data['statuses'][i]['metadata']['iso_language_code'])
 
             timestamp = mktime_tz(parsedate_tz(data['statuses'][i]['created_at']))
-            tweet_time = datetime.fromtimestamp(timestamp, pytz.timezone('Asia/Kolkata'))
-            tweet_time=tweet_time.strftime('%Y-%m-%d %H:%M:%S')
+            tweet_time = datetime.fromtimestamp(timestamp, pytz.timezone('Asia/Kolkata')).isoformat()
+            tweet_time=str(tweet_time[0:-6]+"Z")
+            tweet_time = datetime.strptime(tweet_time, "%Y-%m-%dT%H:%M:%SZ")
+            #tweet_time=tweet_time.strftime('%Y-%m-%d %H:%M:%S')
             tweet_id=data['statuses'][i]['id']
             tweet_link="https://twitter.com/statuses/"+str(tweet_id)
 
