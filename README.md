@@ -2,8 +2,6 @@
 
 This api uses standard Twitter search api to fetch tweets corresponding to the keyword user enters.
 
-Proper readme would be uploaded very soon.
-
 # backend.py (API 1)
 1) Start Mongodb server on your local machine and create a collection and name it "api1" 
 2) Run the code. You will be prompted to enter a keyword to search for. Once the execution is finished, the results are stored automatically into the database.
