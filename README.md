@@ -12,9 +12,9 @@ Proper readme would be uploaded very soon.
 1) This api is used to perform any operations on the database.
 2) Run the code. You will be prompted with three options:
 
-   # 1 to directly search in db:
+   # 1: To directly search in db:
         This option will let you search for a keyword in database. (Search is performed on fields username, screenname, tweet         text and hashtags). It checks, if "entered string is present" in any of the above fields and displays the results.
-   # 2 to put filters 
+   # 2: To put filters 
         This option lets you put four types of filters on data.
           1) username/screenname : This option lets you filter all the tweets by a particular user.
           2) Datetime : This option lets you filter all tweets that are created between "from" datetime and "to" datetime.
@@ -24,7 +24,7 @@ Proper readme would be uploaded very soon.
         (You can put more than one filters by selecting enter more filters)
         
         Once you think you've put enough filters, you can choose to display the results as it is or you can display the               results in a sorted manner(we'll discuss about it below)
-   # 3 to print the database in sorted manner
+   # 3: To print the database in sorted manner
        1) This option let's you print the results in a sorted manner.
        2) You will be prompted to enter an input according to "1: datetime, 2: tweet text, 3: retweets, 4: favorites"
           # Understanding how to give input
